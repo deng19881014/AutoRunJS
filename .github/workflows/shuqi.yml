@@ -9,9 +9,9 @@ jobs:
     steps:
       
       - name: Checkout
-	   uses: actions/checkout@v2
+	uses: actions/checkout@v2
         with:
-          repository: sngxpro/AutoRunJS/tree/main/task
+          repository: sngxpro/AutoRunJS
       - name: Use Node.js 14.x
         uses: actions/setup-node@v1
         with:
@@ -24,7 +24,7 @@ jobs:
           npm install request
       - name: '【书旗小说】'
         run: |
-          node shuqi.js
+          node task/shuqi.js
         env:
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
           TG_USER_ID: ${{ secrets.TG_USER_ID }}
